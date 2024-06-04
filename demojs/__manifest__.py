@@ -11,6 +11,7 @@
     'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
+        'data/profile.xml',
         'data/data.xml',
         'views/view.xml',
         'views/template.xml',
