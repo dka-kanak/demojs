@@ -2,7 +2,16 @@
 <odoo>
 <template id="branches" name="Branches">
     <t t-call="website.layout">
-        <div class="container main_branch_el_selector">
+        <div class="container">
+            <button type="button" class="click_render_data">click to render data</button>
+        </div>
+        <div id="main_branch_data"/>
+        
+    </t>
+</template>
+
+<template id="main_branch_el_selector" name="branch info">
+    <div class="container main_branch_el_selector">
             <div class="row mt32">
                 <div class="col-md-6 offset-md-3">
                     <div class="row">
@@ -21,9 +30,7 @@
                 </div>
             </div>
         </div>
-    </t>
 </template>
-
 <template id="branch_tmpl">
     <ul class="list-group mt32" t-if="branches">
         <t t-foreach="branches" t-as="branch">

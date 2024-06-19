@@ -1,6 +1,29 @@
 /** @odoo-module **/
 import publicWidget from "@web/legacy/js/public/public_widget";
 
+export const RenderButton = publicWidget.Widget.extend({
+    selector: '.click_render_data',
+        events: {
+            'click': '_onClickButton'
+        },
+        init: function() {
+            debugger
+            this._super.apply(this, arguments);
+            this.rpc = this.bindService("rpc");
+        },
+        start: function() {
+            debugger;
+            var def = this._super.apply(this, arguments);
+            return def;
+        },
+        _onClickButton: async function(ev){
+            var datas = await this.rpc('/render/data/branch');
+            $('#main_branch_data').html(datas.branches || '');
+            this.trigger_up('widgets_start_request', {$target: $('.main_branch_el_selector')});
+        }
+});
+
+
 export const BranchSelector = publicWidget.Widget.extend({
     selector: '.main_branch_el_selector',
         events: {
@@ -70,7 +93,7 @@ export const BranchSelector = publicWidget.Widget.extend({
         },
 
 });
-
+publicWidget.registry.RenderButton = RenderButton;
 publicWidget.registry.BranchSelector = BranchSelector;
 
 export default {

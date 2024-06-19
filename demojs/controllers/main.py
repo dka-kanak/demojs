@@ -3,6 +3,15 @@ from odoo.http import request
 
 
 class WebsiteBranches(http.Controller):
+    @http.route('/render/data/branch', type="json", auth="public", methods=['POST'], website=True, csrf=False)
+    def rednerdemobranches(self, **post):
+        branches = request.env['branch.branch'].search([])
+        values = {}
+        values['branches'] = request.env['ir.ui.view']._render_template('demojs.main_branch_el_selector', {
+            'branches': branches,
+        })
+        return values
+
     @http.route('/branch', type='http', auth="public", website=True, sitemap=False)
     def demobranches(self, **post):
         branches = request.env['branch.branch'].search([])
