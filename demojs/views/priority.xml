@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="products_item_priority_default" inherit_id="website_sale.products_item">
+		<xpath expr="//div[hasclass('o_wsale_product_information')]" position="after">
+			<div>Priority default 16</div>
+		</xpath>
+	</template>
+	<template id="products_item_priority_15" inherit_id="website_sale.products_item" priority="15">
+		<xpath expr="//div[hasclass('o_wsale_product_information')]" position="after">
+			<div>Priority default 15</div>
+		</xpath>
+	</template>
+	<template id="products_item_priority_14" inherit_id="website_sale.products_item" priority="14">
+		<xpath expr="//div[hasclass('o_wsale_product_information')]" position="after">
+			<div>Priority default 14</div>
+		</xpath>
+	</template>
+	<template id="products_item_priority_18" inherit_id="website_sale.products_item" priority="18">
+		<xpath expr="//div[hasclass('o_wsale_product_information')]" position="after">
+			<div>Priority default 18</div>
+		</xpath>
+	</template>
+	<template id="products_item_priority_17" inherit_id="website_sale.products_item" priority="17">
+		<xpath expr="//div[hasclass('o_wsale_product_information')]" position="after">
+			<div>Priority default 17</div>
+		</xpath>
+	</template>
+</odoo>

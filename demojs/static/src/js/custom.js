@@ -7,12 +7,10 @@ export const RenderButton = publicWidget.Widget.extend({
             'click': '_onClickButton'
         },
         init: function() {
-            debugger
             this._super.apply(this, arguments);
             this.rpc = this.bindService("rpc");
         },
         start: function() {
-            debugger;
             var def = this._super.apply(this, arguments);
             return def;
         },

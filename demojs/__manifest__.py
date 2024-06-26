@@ -15,6 +15,7 @@
         'data/data.xml',
         'views/view.xml',
         'views/template.xml',
+        'views/priority.xml'
     ],
     'installable': True,
     'application': True,
